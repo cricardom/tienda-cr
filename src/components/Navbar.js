@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/alt-text */
 
 import * as React from 'react';
@@ -8,9 +9,9 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import logo from '../imagens/logoTheLook.png';
-//import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 
-/*const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: "1px",
         marginBottom: "5rem",
@@ -25,15 +26,15 @@ import logo from '../imagens/logoTheLook.png';
 
     },
     button: {
-        marginLeft: theme.spacing(2),
+        marginLeft: theme.spacing (2),
     },
     image: {
         marginRigth: "10px",
         height: "1rem",
     },
-}));*/
+}));
 export default function NavBar() {
-  //const classes = useStyles();
+  const classes = useStyles();
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -49,7 +50,7 @@ export default function NavBar() {
             <img src={logo}  />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+           tienda
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
