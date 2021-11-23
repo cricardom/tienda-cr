@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
@@ -11,11 +10,10 @@ import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
-import ExpandMoreIcon from '@mui/material/ExpandMore';
-import { ClassNames } from '@emotion/react';
-import { AddShoppingCart } from '@material-ui/icons';
-import accounting from 'accounting';
-
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShareIcon from '@mui/icons-material/Share';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -28,7 +26,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function Product() {
+export default function RecipeReviewCard() {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -40,35 +38,36 @@ export default function Product() {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            Levis
+            R
           </Avatar>
         }
         action={
-          <Typography
-          className={ClassNames.action}
-          variant='h5'
-          color='textSecondary'
-          >
-              {accounting.formatMoney(200000)}
-          </Typography>
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
         }
-        title="Levis 501 azul"
-        subheader="in stock"
+        title="Shrimp and Chorizo Paella"
+        subheader="September 14, 2016"
       />
       <CardMedia
         component="img"
         height="194"
-        image="https://images.assetsdelivery.com/compings_v2/norgal/norgal1802/norgal180200019.jpg"
-        alt="Levis 501"
+        image="/static/images/cards/paella.jpg"
+        alt="Paella dish"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          Pantalones Levis 501 originales
+          This impressive paella is a perfect party dish and a fun meal to cook
+          together with your guests. Add 1 cup of frozen peas along with the mussels,
+          if you like.
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to cart" >
-          <AddShoppingCart frontSize='large' />
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon />
         </IconButton>
         <ExpandMore
           expand={expanded}
@@ -81,21 +80,30 @@ export default function Product() {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Historia:</Typography>
+          <Typography paragraph>Method:</Typography>
           <Typography paragraph>
-          Resulta curioso pensar hoy en día en una prenda tan común y democrática como el pantalón vaquero. Está tan integrado en nuestro día a día que ni siquiera llegamos a echarle cuenta. ¿O acaso tú has cogido unos jeans una mañana cualquiera y, antes de ponértelos, te has preguntado de dónde vienes y a dónde irán? Sin embargo, si reparásemos por un segundo lo que esta pieza ha vivido hasta llegar al siglo XXI, nos sorprenderíamos por su curiosa historia.
-
-            Para llegar al origen de los jeans debemos viajar a 1851, cuando el alemán Levi Strauss emigró a Estados Unidos, primero a Nueva York y, dos años después, a San Francisco (California). Aprovechando la fiebre del oro desarrollada en los States, Strauss comenzó a fabricar ropa de trabajo resistente para los mineros.Al principio fueron pantalones confeccionados con las mismas lonas que se utilizaban para fabricar tiendas de campaña o toldos, por eso todos los pantalones Levi's –que se podían adquirir por 1,50 dólares– eran de color marrón y sin bolsillos traseros. No es hasta en 1860 cuando Strauss descubre un material de algodón fabricado en Nîmes, Francia –y que terminó dando lugar al término denim–, mucho más adecuado para la confección de sus jeans. 
-
+            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
+            aside for 10 minutes.
           </Typography>
           <Typography paragraph>
-           
+            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over
+            medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring
+            occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a
+            large plate and set aside, leaving chicken and chorizo in the pan. Add
+            pimentón, bay leaves, garlic, tomatoes, onion, salt and pepper, and cook,
+            stirring often until thickened and fragrant, about 10 minutes. Add
+            saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
           </Typography>
           <Typography paragraph>
-            
+            Add rice and stir very gently to distribute. Top with artichokes and
+            peppers, and cook without stirring, until most of the liquid is absorbed,
+            15 to 18 minutes. Reduce heat to medium-low, add reserved shrimp and
+            mussels, tucking them down into the rice, and cook again without
+            stirring, until mussels have opened and rice is just tender, 5 to 7
+            minutes more. (Discard any mussels that don’t open.)
           </Typography>
           <Typography>
-             
+            Set aside off of the heat to let rest for 10 minutes, and then serve.
           </Typography>
         </CardContent>
       </Collapse>
