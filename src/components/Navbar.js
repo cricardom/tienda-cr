@@ -33,10 +33,10 @@ export default function Navbar() {
             variant="h4" 
             component="div" 
             sx={{ flexGrow: 10 }}>
-            THE LOOK Tienda de Ropa
+            <strong>THE LOOK Tienda de Ropa</strong>
           </Typography>
           <IconButton aria-label="show cart items" color="inherit">
-            <Badge badgeContent={20} color= "secondary" />
+            <Badge badgeContent={20} color= "error" />
               <ShoppingCart frontSize="large" color= "inherit" sx= {{mr:2}} />
            </IconButton>
           <Button 
