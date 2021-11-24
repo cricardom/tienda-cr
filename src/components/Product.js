@@ -40,7 +40,7 @@ export default function Product() {
       />
       <CardMedia
         component="img"
-        height="250"
+        height="245"
         img src= {imagen}/>
       <CardContent>
         <Typography variant="body2" color="text.secondary">
